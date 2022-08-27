@@ -31,5 +31,5 @@
 - [Mohammed Alblewi](https://github.com/mohammedalblewi)
 - [Dana Alomari](https://github.com/DanaAlomari)
 
-[live link](https://jafer-aldakhily.github.io/todo-project/)
+[live link](https://jafer-aldakhily.github.io/todo-project/)<br>
 [Figma link](https://www.figma.com/file/BU7Db5UkPcYimCRe6WgdWt/To-Do?node-id=0%3A1)
