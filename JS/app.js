@@ -171,6 +171,7 @@ window.onload = () => {
   }
   renderFromLocal();
   dragTask();
+  setThemeColor()
 };
 
 const renderFromLocal = () => {
@@ -377,6 +378,7 @@ function getFromLocal() {
 
 function logout() {
   localStorage.removeItem("logged");
+  localStorage.removeItem("theme");
 
   setTimeout(() => {
     window.location = "./index.html";
@@ -412,3 +414,18 @@ function showProfile() {
   }
 }
 showProfile();
+
+// Light & Dark mode
+const chk = document.getElementById("chk");
+chk.addEventListener("change", () => {
+    localStorage.setItem("theme",chk.value)
+    document.body.classList.toggle("darkTheme");
+});
+
+const setThemeColor = () => {
+  color = localStorage.getItem("theme")
+  if(color == "on")
+  {
+  document.body.classList.toggle("darkTheme");
+  }
+}

@@ -94,5 +94,6 @@ if (isLogged) {
 const chk = document.getElementById("chk");
 
 chk.addEventListener("change", () => {
+  localStorage.setItem("theme",chk.value)
   document.body.classList.toggle("darkTheme");
 });
