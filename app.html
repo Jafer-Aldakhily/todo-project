@@ -25,6 +25,15 @@
             ><img style="height: 100px" src="./res/logo.png" alt=""
           /></a>
           <div class="d-flex">
+            <form class="d-flex me-4" id="filterForm">
+              <!-- <input id="select" type="text" placeholder="Search" /> -->
+              <select class="btn btn-secondary me-2" name="" id="filterSelect">
+                <option value="critical">Critical</option>
+                <option value="normal">Normal</option>
+                <option value="low-priority">Low</option>
+              </select>
+              <button class="btn btn-secondary me-2" type="submit">SHOW</button>
+            </form>
             <div class="check-theme">
               <input type="checkbox" class="checkbox" id="chk" />
               <label class="label" for="chk">

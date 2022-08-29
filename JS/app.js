@@ -59,8 +59,9 @@ const dateFormate = (date) => {
   return day + month;
 };
 
-let arr = [1];
-let loggedInUser = localStorage.getItem("logged")
+let arr = [1]
+let loggedInUser = 1
+loggedInUser = localStorage.getItem("logged")
   ? localStorage.getItem("logged")
   : loggedInUser;
 const addTodo = (e) => {
@@ -94,7 +95,7 @@ const addTodo = (e) => {
       // priority.style.color = "red";
       break;
     case "normal":
-      priority = "Normal";
+      priority = "normal";
       break;
     case "low-priority":
       priority = "low priority";
@@ -165,6 +166,7 @@ function setMonth(month) {
 }
 
 window.onload = () => {
+  if(loggedInUser === 1) window.location = "./index.html"
   const todos = JSON.parse(localStorage.getItem("todos"));
   if (todos) {
     arr = todos;
@@ -429,3 +431,28 @@ const setThemeColor = () => {
   document.body.classList.toggle("darkTheme");
   }
 }
+
+
+
+let filterForm = document.getElementById("filterForm");
+let filterSelect = document.getElementById("filterSelect");
+let activeUser = localStorage.getItem("logged");
+
+function filter() {
+  let tasks = localStorage.getItem("todos");
+  let pTasks = JSON.parse(tasks)
+  pTasks = pTasks.filter((item) => {
+    return filterSelect.value == item.priority;
+  })
+  cards[0].innerHTML = "";
+  cards[1].innerHTML = "";
+  cards[2].innerHTML = "";
+  cards[3].innerHTML = "";
+  pTasks.forEach((element) => {
+    render(element);
+  });
+}
+filterForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  filter();
+});
