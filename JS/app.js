@@ -173,7 +173,6 @@ window.onload = () => {
   }
   renderFromLocal();
   dragTask();
-  setThemeColor()
 };
 
 const renderFromLocal = () => {
@@ -423,14 +422,6 @@ chk.addEventListener("change", () => {
     localStorage.setItem("theme",chk.value)
     document.body.classList.toggle("darkTheme");
 });
-
-const setThemeColor = () => {
-  color = localStorage.getItem("theme")
-  if(color == "on")
-  {
-  document.body.classList.toggle("darkTheme");
-  }
-}
 
 
 
